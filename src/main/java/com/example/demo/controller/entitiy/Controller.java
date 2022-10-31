@@ -1,5 +1,7 @@
-package com.example.demo;
+package com.example.demo.controller.entitiy;
 
+import com.example.demo.entitiy.Cliente;
+import com.example.demo.repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
