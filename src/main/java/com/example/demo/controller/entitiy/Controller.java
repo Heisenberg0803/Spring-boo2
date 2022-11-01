@@ -3,8 +3,10 @@ package com.example.demo.controller.entitiy;
 import com.example.demo.entitiy.Cliente;
 import com.example.demo.repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
@@ -15,7 +17,7 @@ public class Controller {
     Repository repository;
 
     @PostMapping
-    public Cliente create(@RequestBody Cliente cliente){
+    public Cliente create(@RequestBody @Valid Cliente cliente){
         Cliente clienteSaved = repository.save(cliente);
         return clienteSaved;
     }
