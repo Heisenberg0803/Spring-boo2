@@ -1,9 +1,6 @@
 package com.example.demo.entitiy;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -14,6 +11,7 @@ public class Cliente {
     private Long id;
     private String nome;
     private String endereco;
+    @OneToMany(cascade=CascadeType.ALL)
     private List<Produto> produtos;
 
     public Cliente(String nome, String endereco, List<Produto> produtos) {
